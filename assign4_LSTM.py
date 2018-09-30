@@ -1,6 +1,6 @@
 from keras.preprocessing import sequence
 from keras.models import Sequential
-from keras.layers import Dense, Embedding, Flatten, Dropout, SimpleRNN
+from keras.layers import Dense, Embedding, Flatten, Dropout, LSTM
 from keras.datasets import imdb
 
 batch_size = 128
@@ -16,7 +16,7 @@ x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 model = Sequential()
 
 model.add(Embedding(max_features, 128))
-model.add(SimpleRNN(128, dropout = 0.2))
+model.add(LSTM(128, dropout = 0.2))
 model.add(Dense(1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy',
