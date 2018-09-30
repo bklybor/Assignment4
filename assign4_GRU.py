@@ -11,7 +11,7 @@ epochs = 20
 max_features = 500
 maxlen=50
 
-maxDiv = 2
+maxDiv = 10
 dropouts = []
 accuracies = []
 scores = []
